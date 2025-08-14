@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&amp;display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&amp;display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&amp;display=swap');
 
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
@@ -1809,6 +1809,11 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 1.5rem;
 }
 
+.py-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pb-4{
   padding-bottom: 1rem;
 }
@@ -1941,6 +1946,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+.uppercase{
+  text-transform: uppercase;
+}
+
 .italic{
   font-style: italic;
 }
@@ -2035,6 +2044,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-white\/90{
   color: rgb(255 255 255 / 0.9);
+}
+
+.text-\[\#9E7B5C\]{
+  --tw-text-opacity: 1;
+  color: rgb(158 123 92 / var(--tw-text-opacity, 1));
 }
 
 .opacity-0{
