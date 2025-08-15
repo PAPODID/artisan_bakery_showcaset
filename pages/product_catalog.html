@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- Mirrored from kate-s-pastry.web.app/pages/product_catalog.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Aug 2025 03:58:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nos Créations - KATE'S PASTRY</title>
+    <meta name="description" content="Découvrez notre collection complète de viennoiseries artisanales françaises. Croissants, pains au chocolat, brioches et créations saisonnières préparés selon la tradition." />
+    <link rel="stylesheet" href="../css/main.css" />
+<script type="module" src="../../static.rocket.new/rocket-webce9a.js?_cfg=https%3A%2F%2Fartisanba4267back.builtwithrocket.new&amp;_be=https%3A%2F%2Fapplication.rocket.new&amp;_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-soft sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="currentColor">
+                        <path d="M20 2C15.5 2 12 5.5 12 10c0 2.5 1 4.8 2.6 6.5L20 38l5.4-21.5C27 14.8 28 12.5 28 10c0-4.5-3.5-8-8-8zm0 11c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+                        <circle cx="20" cy="10" r="2" fill="white"/>
+                    </svg>
+                    <div>
+                        <h1 class="font-headline text-xl font-bold text-primary">KATE'S PASTRY</h1>
+                        <p class="font-accent text-sm text-accent">Tradition & Excellence</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="font-body font-medium text-text-secondary hover:text-accent transition-smooth">Accueil</a>
+                    <a href="product_catalog.html" class="font-body font-medium text-primary hover:text-accent transition-smooth">Nos Créations</a>
+                    <a href="contact_location.html" class="font-body font-medium text-text-secondary hover:text-accent transition-smooth">Contact</a>
+                    <a href="shopping_cart_checkout.html" class="relative">
+                        <svg class="w-6 h-6 text-text-secondary hover:text-accent transition-smooth" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.1 5M7 13v6a2 2 0 002 2h6a2 2 0 002-2v-6"/>
+                        </svg>
+                        <span class="absolute -top-2 -right-2 bg-accent text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" id="cart-count">0</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" id="mobile-menu-btn">
+                    <svg class="w-6 h-6 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden mt-4 pb-4 border-t border-border hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="homepage.html" class="font-body font-medium text-text-secondary">Accueil</a>
+                    <a href="product_catalog.html" class="font-body font-medium text-primary">Nos Créations</a>
+                    <a href="contact_location.html" class="font-body font-medium text-text-secondary">Contact</a>
+                    <a href="shopping_cart_checkout.html" class="font-body font-medium text-text-secondary flex items-center">
+                        Panier (<span id="mobile-cart-count">0</span>)
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-surface py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="font-headline text-display text-primary mb-4">Nos Créations Artisanales</h1>
+                <p class="font-body text-body-lg text-text-secondary max-w-2xl mx-auto">
+                    Découvrez notre collection complète de viennoiseries françaises, préparées chaque matin 
+                    selon les techniques traditionnelles avec des ingrédients d'exception.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Sidebar Filters -->
+                <aside class="lg:w-80 flex-shrink-0">
+                    <!-- Search Bar -->
+                    <div class="card mb-6">
+                        <h3 class="font-headline text-heading text-primary mb-4">Rechercher</h3>
+                        <div class="relative">
+                            <input type="text" placeholder="Rechercher une viennoiserie..." class="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" id="search-input" />
+                            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Category Filters -->
+                    <div class="card mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-headline text-heading text-primary">Catégories</h3>
+                            <button class="text-accent font-body text-sm hover:text-accent-600 transition-smooth" id="reset-filters">
+                                Réinitialiser
+                            </button>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="category-filter sr-only" value="all" checked />
+                                <div class="checkbox-custom mr-3"></div>
+                                <span class="font-body text-text-primary">Toutes les créations</span>
+                                <span class="ml-auto text-text-secondary text-sm">(24)</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="category-filter sr-only" value="croissants" />
+                                <div class="checkbox-custom mr-3"></div>
+                                <span class="font-body text-text-primary">Croissants</span>
+                                <span class="ml-auto text-text-secondary text-sm">(8)</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="category-filter sr-only" value="pains-chocolat" />
+                                <div class="checkbox-custom mr-3"></div>
+                                <span class="font-body text-text-primary">Pains au Chocolat</span>
+                                <span class="ml-auto text-text-secondary text-sm">(6)</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="category-filter sr-only" value="brioches" />
+                                <div class="checkbox-custom mr-3"></div>
+                                <span class="font-body text-text-primary">Brioches</span>
+                                <span class="ml-auto text-text-secondary text-sm">(5)</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="category-filter sr-only" value="saisonnier" />
+                                <div class="checkbox-custom mr-3"></div>
+                                <span class="font-body text-text-primary">Créations Saisonnières</span>
+                                <span class="ml-auto text-text-secondary text-sm">(5)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Dietary Preferences -->
+                    <div class="card mb-6">
+                        <h3 class="font-headline text-heading text-primary mb-4">Préférences</h3>
+                        <div class="space-y-3">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="dietary-filter sr-only" value="bio" />
+                                <div class="checkbox-custom mr-3"></div>
+                                <span class="font-body text-text-primary">Ingrédients Bio</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="dietary-filter sr-only" value="beurre-francais" />
+                                <div class="checkbox-custom mr-3"></div>
+                                <span class="font-body text-text-primary">Beurre Français</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="dietary-filter sr-only" value="sans-gluten" />
+                                <div class="checkbox-custom mr-3"></div>
+                                <span class="font-body text-text-primary">Sans Gluten</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="dietary-filter sr-only" value="vegan" />
+                                <div class="checkbox-custom mr-3"></div>
+                                <span class="font-body text-text-primary">Vegan</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="card mb-6">
+                        <h3 class="font-headline text-heading text-primary mb-4">Prix (FCFA)</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <input type="number" placeholder="Min" class="w-full px-3 py-2 border border-border rounded-lg text-sm" id="price-min" />
+                                <span class="text-text-secondary">-</span>
+                                <input type="number" placeholder="Max" class="w-full px-3 py-2 border border-border rounded-lg text-sm" id="price-max" />
+                            </div>
+                            <div class="text-sm text-text-secondary">
+                                Fourchette: 1,500 - 8,500 FCFA
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mini Cart -->
+                    <div class="card bg-accent-50 border border-accent-200">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-headline text-heading text-primary">Mon Panier</h3>
+                            <span class="bg-accent text-white text-xs px-2 py-1 rounded-full" id="sidebar-cart-count">0</span>
+                        </div>
+                        <div class="space-y-3 mb-4" id="mini-cart-items">
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="font-body text-text-primary">Croissant Classique x2</span>
+                                <span class="font-cta font-medium text-primary">5,000 FCFA</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="font-body text-text-primary">Pain au Chocolat x1</span>
+                                <span class="font-cta font-medium text-primary">2,800 FCFA</span>
+                            </div>
+                        </div>
+                        <div class="border-t border-accent-200 pt-3 mb-4">
+                            <div class="flex items-center justify-between">
+                                <span class="font-cta font-medium text-primary">Total:</span>
+                                <span class="font-cta font-bold text-accent text-lg" id="mini-cart-total">7,800 FCFA</span>
+                            </div>
+                        </div>
+                        <a href="shopping_cart_checkout.html" class="btn-primary w-full text-center">
+                            Voir le Panier
+                        </a>
+                    </div>
+                </aside>
+
+                <!-- Product Grid -->
+                <main class="flex-1">
+                    <!-- Sort and View Options -->
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+                        <div class="flex items-center space-x-4">
+                            <span class="font-body text-text-secondary">Trier par:</span>
+                            <select class="border border-border rounded-lg px-3 py-2 font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-accent" id="sort-select">
+                                <option value="featured">Mis en avant</option>
+                                <option value="name">Nom A-Z</option>
+                                <option value="price-low">Prix croissant</option>
+                                <option value="price-high">Prix décroissant</option>
+                                <option value="newest">Nouveautés</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="font-body text-text-secondary text-sm">Affichage:</span>
+                            <button class="p-2 border border-border rounded-lg hover:bg-surface transition-smooth" id="grid-view" data-view="grid">
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                                </svg>
+                            </button>
+                            <button class="p-2 border border-border rounded-lg hover:bg-surface transition-smooth" id="list-view" data-view="list">
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="products-grid">
+                        <!-- Product Card 1 -->
+                        <div class="product-card group card hover:scale-105 transition-all duration-500 cursor-pointer" data-category="croissants" data-price="2500" data-dietary="bio,beurre-francais">
+                            <div class="relative overflow-hidden rounded-lg mb-4">
+                                <img src="https://images.unsplash.com/photo-1555507036-ab794f4ade2a?q=80&amp;w=2940&amp;auto=format&amp;fit=crop" alt="Croissant Classique" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='../../images.pexels.com/photos/2067396/pexels-photo-20673969245.jpg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2'; this.onerror=null;" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="bg-success text-white text-xs px-2 py-1 rounded-full font-body">En Stock</span>
+                                </div>
+                                <div class="absolute top-3 right-3">
+                                    <span class="bg-secondary text-primary text-xs px-2 py-1 rounded-full font-body">Bio</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <button class="bg-white text-primary px-4 py-2 rounded-lg font-cta font-medium hover:bg-surface transition-smooth" onclick="window.location.href='product_detail_page.html'">
+                                        Voir Détails
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="font-headline text-subheading text-primary group-hover:text-accent transition-smooth">Croissant Classique</h3>
+                                <p class="font-body text-text-secondary text-sm line-clamp-2">
+                                    Croissant traditionnel au beurre français, feuilletage parfait et texture moelleuse. 
+                                    Préparé selon la méthode ancestrale.
+                                </p>
+                                <div class="flex items-center space-x-2 text-xs">
+                                    <span class="bg-accent-100 text-accent-700 px-2 py-1 rounded-full">Beurre Français</span>
+                                    <span class="bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">15min</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="font-cta font-bold text-accent text-lg">2,500 FCFA</span>
+                                        <span class="font-body text-text-secondary text-xs">Pièce</span>
+                                    </div>
+                                    <button class="btn-primary px-4 py-2 text-sm add-to-cart" data-product="croissant-classique" data-price="2500">
+                                        Ajouter au Panier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 2 -->
+                        <div class="product-card group card hover:scale-105 transition-all duration-500 cursor-pointer" data-category="pains-chocolat" data-price="2800" data-dietary="beurre-francais">
+                            <div class="relative overflow-hidden rounded-lg mb-4">
+                                <img src="../../images.pexels.com/photos/2067396/pexels-photo-20673969245.jpg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Pain au Chocolat Premium" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='../../images.pixabay.com/photo/2017/06/22/20/22/croissant-2432077_1280.jpg'; this.onerror=null;" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="bg-success text-white text-xs px-2 py-1 rounded-full font-body">En Stock</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <button class="bg-white text-primary px-4 py-2 rounded-lg font-cta font-medium hover:bg-surface transition-smooth" onclick="window.location.href='product_detail_page.html'">
+                                        Voir Détails
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="font-headline text-subheading text-primary group-hover:text-accent transition-smooth">Pain au Chocolat Premium</h3>
+                                <p class="font-body text-text-secondary text-sm line-clamp-2">
+                                    Pain au chocolat avec chocolat noir 70% et pâte feuilletée au beurre d'Isigny. 
+                                    Texture croustillante et fondante.
+                                </p>
+                                <div class="flex items-center space-x-2 text-xs">
+                                    <span class="bg-accent-100 text-accent-700 px-2 py-1 rounded-full">Chocolat 70%</span>
+                                    <span class="bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">18min</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="font-cta font-bold text-accent text-lg">2,800 FCFA</span>
+                                        <span class="font-body text-text-secondary text-xs">Pièce</span>
+                                    </div>
+                                    <button class="btn-primary px-4 py-2 text-sm add-to-cart" data-product="pain-chocolat-premium" data-price="2800">
+                                        Ajouter au Panier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 3 -->
+                        <div class="product-card group card hover:scale-105 transition-all duration-500 cursor-pointer" data-category="brioches" data-price="3200" data-dietary="bio">
+                            <div class="relative overflow-hidden rounded-lg mb-4">
+                                <img src="../../images.pixabay.com/photo/2017/06/22/20/22/croissant-2432077_1280.jpg" alt="Brioche Parisienne" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?q=80&amp;w=2940&amp;auto=format&amp;fit=crop'; this.onerror=null;" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="bg-warning text-white text-xs px-2 py-1 rounded-full font-body">Stock Limité</span>
+                                </div>
+                                <div class="absolute top-3 right-3">
+                                    <span class="bg-secondary text-primary text-xs px-2 py-1 rounded-full font-body">Bio</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <button class="bg-white text-primary px-4 py-2 rounded-lg font-cta font-medium hover:bg-surface transition-smooth" onclick="window.location.href='product_detail_page.html'">
+                                        Voir Détails
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="font-headline text-subheading text-primary group-hover:text-accent transition-smooth">Brioche Parisienne</h3>
+                                <p class="font-body text-text-secondary text-sm line-clamp-2">
+                                    Brioche traditionnelle enrichie aux œufs frais et beurre bio. 
+                                    Mie filante et croûte dorée, parfaite pour le petit-déjeuner.
+                                </p>
+                                <div class="flex items-center space-x-2 text-xs">
+                                    <span class="bg-accent-100 text-accent-700 px-2 py-1 rounded-full">Œufs Frais</span>
+                                    <span class="bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">12min</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="font-cta font-bold text-accent text-lg">3,200 FCFA</span>
+                                        <span class="font-body text-text-secondary text-xs">Pièce</span>
+                                    </div>
+                                    <button class="btn-primary px-4 py-2 text-sm add-to-cart" data-product="brioche-parisienne" data-price="3200">
+                                        Ajouter au Panier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 4 -->
+                        <div class="product-card group card hover:scale-105 transition-all duration-500 cursor-pointer" data-category="saisonnier" data-price="4500" data-dietary="bio,beurre-francais">
+                            <div class="relative overflow-hidden rounded-lg mb-4">
+                                <img src="https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?q=80&amp;w=2940&amp;auto=format&amp;fit=crop" alt="Chausson aux Pommes d'Hiver" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='../../images.pexels.com/photos/3892469/pexels-photo-38924699245.jpg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2'; this.onerror=null;" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="bg-accent text-white text-xs px-2 py-1 rounded-full font-body">Saisonnier</span>
+                                </div>
+                                <div class="absolute top-3 right-3">
+                                    <span class="bg-secondary text-primary text-xs px-2 py-1 rounded-full font-body">Bio</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <button class="bg-white text-primary px-4 py-2 rounded-lg font-cta font-medium hover:bg-surface transition-smooth" onclick="window.location.href='product_detail_page.html'">
+                                        Voir Détails
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="font-headline text-subheading text-primary group-hover:text-accent transition-smooth">Chausson aux Pommes d'Hiver</h3>
+                                <p class="font-body text-text-secondary text-sm line-clamp-2">
+                                    Création saisonnière avec pommes locales, cannelle de Ceylan et pâte feuilletée maison. 
+                                    Disponible jusqu'en mars.
+                                </p>
+                                <div class="flex items-center space-x-2 text-xs">
+                                    <span class="bg-accent-100 text-accent-700 px-2 py-1 rounded-full">Pommes Locales</span>
+                                    <span class="bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">20min</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="font-cta font-bold text-accent text-lg">4,500 FCFA</span>
+                                        <span class="font-body text-text-secondary text-xs">Pièce</span>
+                                    </div>
+                                    <button class="btn-primary px-4 py-2 text-sm add-to-cart" data-product="chausson-pommes" data-price="4500">
+                                        Ajouter au Panier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 5 -->
+                        <div class="product-card group card hover:scale-105 transition-all duration-500 cursor-pointer" data-category="croissants" data-price="3800" data-dietary="beurre-francais">
+                            <div class="relative overflow-hidden rounded-lg mb-4">
+                                <img src="../../images.pexels.com/photos/3892469/pexels-photo-38924699245.jpg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Croissant aux Amandes" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='../../images.pixabay.com/photo/2017/01/11/11/33/cake-1971552_1280.jpg'; this.onerror=null;" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="bg-success text-white text-xs px-2 py-1 rounded-full font-body">En Stock</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <button class="bg-white text-primary px-4 py-2 rounded-lg font-cta font-medium hover:bg-surface transition-smooth" onclick="window.location.href='product_detail_page.html'">
+                                        Voir Détails
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="font-headline text-subheading text-primary group-hover:text-accent transition-smooth">Croissant aux Amandes</h3>
+                                <p class="font-body text-text-secondary text-sm line-clamp-2">
+                                    Croissant garni de crème d'amandes maison et amandes effilées. 
+                                    Texture moelleuse avec un croquant délicat.
+                                </p>
+                                <div class="flex items-center space-x-2 text-xs">
+                                    <span class="bg-accent-100 text-accent-700 px-2 py-1 rounded-full">Amandes Fraîches</span>
+                                    <span class="bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">16min</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="font-cta font-bold text-accent text-lg">3,800 FCFA</span>
+                                        <span class="font-body text-text-secondary text-xs">Pièce</span>
+                                    </div>
+                                    <button class="btn-primary px-4 py-2 text-sm add-to-cart" data-product="croissant-amandes" data-price="3800">
+                                        Ajouter au Panier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 6 -->
+                        <div class="product-card group card hover:scale-105 transition-all duration-500 cursor-pointer" data-category="brioches" data-price="5200" data-dietary="bio,sans-gluten">
+                            <div class="relative overflow-hidden rounded-lg mb-4">
+                                <img src="../../images.pixabay.com/photo/2017/01/11/11/33/cake-1971552_1280.jpg" alt="Brioche Sans Gluten" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555507036-ab794f4ade2a?q=80&amp;w=2940&amp;auto=format&amp;fit=crop'; this.onerror=null;" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="bg-success text-white text-xs px-2 py-1 rounded-full font-body">En Stock</span>
+                                </div>
+                                <div class="absolute top-3 right-3 flex space-x-1">
+                                    <span class="bg-secondary text-primary text-xs px-2 py-1 rounded-full font-body">Bio</span>
+                                    <span class="bg-primary text-white text-xs px-2 py-1 rounded-full font-body">Sans Gluten</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <button class="bg-white text-primary px-4 py-2 rounded-lg font-cta font-medium hover:bg-surface transition-smooth" onclick="window.location.href='product_detail_page.html'">
+                                        Voir Détails
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="font-headline text-subheading text-primary group-hover:text-accent transition-smooth">Brioche Sans Gluten</h3>
+                                <p class="font-body text-text-secondary text-sm line-clamp-2">
+                                    Brioche artisanale sans gluten, farine de riz et amandes. 
+                                    Texture moelleuse identique à la version traditionnelle.
+                                </p>
+                                <div class="flex items-center space-x-2 text-xs">
+                                    <span class="bg-accent-100 text-accent-700 px-2 py-1 rounded-full">Farine de Riz</span>
+                                    <span class="bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">14min</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="font-cta font-bold text-accent text-lg">5,200 FCFA</span>
+                                        <span class="font-body text-text-secondary text-xs">Pièce</span>
+                                    </div>
+                                    <button class="btn-primary px-4 py-2 text-sm add-to-cart" data-product="brioche-sans-gluten" data-price="5200">
+                                        Ajouter au Panier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="text-center mt-12">
+                        <button class="btn-secondary px-8 py-3" id="load-more">
+                            Charger Plus de Créations
+                            <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="bg-text-primary text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Brand Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="currentColor">
+                            <path d="M20 2C15.5 2 12 5.5 12 10c0 2.5 1 4.8 2.6 6.5L20 38l5.4-21.5C27 14.8 28 12.5 28 10c0-4.5-3.5-8-8-8zm0 11c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+                            <circle cx="20" cy="10" r="2" fill="white"/>
+                        </svg>
+                        <div>
+                            <h3 class="font-headline text-xl font-bold text-[#9E7B5C]">KATE'S PASTRY</h3>
+                            <p class="font-accent text-accent">Tradition & Excellence</p>
+                        </div>
+                    </div>
+                    <p class="font-body text-white/80 mb-6 max-w-md">
+                        Découvrez l'excellence de la tradition française avec nos viennoiseries artisanales, 
+                        préparées chaque matin selon les techniques ancestrales.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="bg-white/10 hover:bg-accent p-3 rounded-full transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="bg-white/10 hover:bg-accent p-3 rounded-full transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="bg-white/10 hover:bg-accent p-3 rounded-full transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="bg-white/10 hover:bg-accent p-3 rounded-full transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-headline text-lg font-semibold mb-6">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="homepage.html" class="font-body text-white/80 hover:text-accent transition-smooth">Accueil</a></li>
+                        <li><a href="product_catalog.html" class="font-body text-white/80 hover:text-accent transition-smooth">Nos Créations</a></li>
+                        <li><a href="contact_location.html" class="font-body text-white/80 hover:text-accent transition-smooth">Contact</a></li>
+                        <li><a href="shopping_cart_checkout.html" class="font-body text-white/80 hover:text-accent transition-smooth">Commander</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-headline text-lg font-semibold mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span class="font-body text-white/80">123 Avenue de la Paix, Lomé </span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <span class="font-body text-white/80">+228 91 23 47 97
+                            </span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <span class="font-body text-white/80">katebertrya@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 mt-12 pt-8 text-center">
+                <p class="font-body text-white/60">
+                    © 2025 KATE'S PASTRY. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+     <!-- Custom Styles for Checkboxes -->
+    <style>
+        .checkbox-custom {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #E5E5E5;
+            border-radius: 4px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .category-filter:checked + .checkbox-custom,
+        .dietary-filter:checked + .checkbox-custom {
+            background-color: #CC465E;
+            border-color: #CC465E;
+        }
+
+        .category-filter:checked + .checkbox-custom::after,
+        .dietary-filter:checked + .checkbox-custom::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+
+    <!-- JavaScript for Functionality -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cart functionality
+        let cartItems = [
+            { name: 'Croissant Classique', quantity: 2, price: 2500 },
+            { name: 'Pain au Chocolat', quantity: 1, price: 2800 }
+        ];
+
+        function updateCartDisplay() {
+            const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+            const cartTotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+            
+            document.getElementById('cart-count').textContent = cartCount;
+            document.getElementById('mobile-cart-count').textContent = cartCount;
+            document.getElementById('sidebar-cart-count').textContent = cartCount;
+            document.getElementById('mini-cart-total').textContent = cartTotal.toLocaleString('fr-FR') + ' FCFA';
+        }
+
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // Récupérer les données du création depuis la carte
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('h3').textContent;
+                const productPrice = parseInt(this.getAttribute('data-price'));
+                const productImage = productCard.querySelector('img').src;
+                const productCategory = productCard.getAttribute('data-category');
+                
+                // Créer l'objet création
+                const product = {
+                    id: this.getAttribute('data-product'),
+                    name: productName,
+                    price: productPrice,
+                    image: productImage,
+                    category: productCategory
+                };
+                
+                // Ajouter au panier via le CartManager
+                if (typeof cartManager !== 'undefined') {
+                    cartManager.addToCart(product);
+                } else {
+                    // Fallback si le CartManager n'est pas chargé
+                    const existingItem = cartItems.find(item => item.name === productName);
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cartItems.push({ name: productName, quantity: 1, price: productPrice });
+                    }
+                    updateCartDisplay();
+                }
+                
+                // Visual feedback
+                this.textContent = 'Ajouté!';
+                this.classList.add('bg-success');
+                setTimeout(() => {
+                    this.textContent = 'Ajouter au Panier';
+                    this.classList.remove('bg-success');
+                }, 1500);
+            });
+        });
+
+        // Filter functionality
+        const productCards = document.querySelectorAll('.product-card');
+        const categoryFilters = document.querySelectorAll('.category-filter');
+        const dietaryFilters = document.querySelectorAll('.dietary-filter');
+        const searchInput = document.getElementById('search-input');
+        const priceMin = document.getElementById('price-min');
+        const priceMax = document.getElementById('price-max');
+
+        function filterProducts() {
+            const selectedCategories = Array.from(categoryFilters)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+            
+            const selectedDietary = Array.from(dietaryFilters)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+            
+            const searchTerm = searchInput.value.toLowerCase();
+            const minPrice = parseInt(priceMin.value) || 0;
+            const maxPrice = parseInt(priceMax.value) || Infinity;
+
+            productCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const price = parseInt(card.getAttribute('data-price'));
+                const dietary = card.getAttribute('data-dietary').split(',');
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+
+                let showCard = true;
+
+                // Category filter
+                if (selectedCategories.length > 0 && !selectedCategories.includes('all')) {
+                    showCard = showCard && selectedCategories.includes(category);
+                }
+
+                // Dietary filter
+                if (selectedDietary.length > 0) {
+                    showCard = showCard && selectedDietary.some(diet => dietary.includes(diet));
+                }
+
+                // Search filter
+                if (searchTerm) {
+                    showCard = showCard && (title.includes(searchTerm) || description.includes(searchTerm));
+                }
+
+                // Price filter
+                showCard = showCard && (price >= minPrice && price <= maxPrice);
+
+                card.style.display = showCard ? 'block' : 'none';
+            });
+        }
+
+        // Event listeners for filters
+        categoryFilters.forEach(filter => {
+            filter.addEventListener('change', filterProducts);
+        });
+
+        dietaryFilters.forEach(filter => {
+            filter.addEventListener('change', filterProducts);
+        });
+
+        searchInput.addEventListener('input', filterProducts);
+        priceMin.addEventListener('input', filterProducts);
+        priceMax.addEventListener('input', filterProducts);
+
+        // Reset filters
+        document.getElementById('reset-filters').addEventListener('click', function() {
+            categoryFilters.forEach(filter => {
+                filter.checked = filter.value === 'all';
+            });
+            dietaryFilters.forEach(filter => {
+                filter.checked = false;
+            });
+            searchInput.value = '';
+            priceMin.value = '';
+            priceMax.value = '';
+            filterProducts();
+        });
+
+        // Sort functionality
+        document.getElementById('sort-select').addEventListener('change', function() {
+            const sortBy = this.value;
+            const productsGrid = document.getElementById('products-grid');
+            const cards = Array.from(productCards);
+
+            cards.sort((a, b) => {
+                switch (sortBy) {
+                    case 'name':
+                        return a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent);
+                    case 'price-low':
+                        return parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price'));
+                    case 'price-high':
+                        return parseInt(b.getAttribute('data-price')) - parseInt(a.getAttribute('data-price'));
+                    default:
+                        return 0;
+                }
+            });
+
+            cards.forEach(card => productsGrid.appendChild(card));
+        });
+
+        // View toggle functionality
+        document.getElementById('grid-view').addEventListener('click', function() {
+            document.getElementById('products-grid').className = 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6';
+            this.classList.add('bg-surface');
+            document.getElementById('list-view').classList.remove('bg-surface');
+        });
+
+        document.getElementById('list-view').addEventListener('click', function() {
+            document.getElementById('products-grid').className = 'grid grid-cols-1 gap-6';
+            this.classList.add('bg-surface');
+            document.getElementById('grid-view').classList.remove('bg-surface');
+        });
+
+        // Load more functionality
+        document.getElementById('load-more').addEventListener('click', function() {
+            // Simulate loading more products
+            this.textContent = 'Chargement...';
+            setTimeout(() => {
+                this.textContent = 'Charger Plus de Créations';
+                // In a real app, you would load more products here
+            }, 1000);
+        });
+
+        // Initialize cart display
+        updateCartDisplay();
+
+        // Initialize grid view as active
+        document.getElementById('grid-view').classList.add('bg-surface');
+    </script>
+        <script src="../public/app-config.js"></script>
+        <script src="../public/cart-manager.js"></script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+
+<!-- Mirrored from kate-s-pastry.web.app/pages/product_catalog.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Aug 2025 03:59:00 GMT -->
+</html>
